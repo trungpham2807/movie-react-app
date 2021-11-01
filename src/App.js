@@ -98,7 +98,8 @@ useEffect(() => {
 // 2.4. Render + Router component
   return (
     <div className="App">
-      <SearchMovie query={query} setQuery = {setQuery} searchMovie = {searchMovie} setSearchMovie = {setSearchMovie}/>
+      <NavBarMovie />
+      {/* <SearchMovie query={query} setQuery = {setQuery} searchMovie = {searchMovie} setSearchMovie = {setSearchMovie}/> */}
       {/* <NavBarMovie /> */}
       <SliderMovie />
 
