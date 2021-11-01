@@ -1,9 +1,10 @@
 .MainPage-container {
     display: flex;
-    /* flex-direction: row;
-    overflow: hidden; */
-    overflow-x: auto;
-	flex-wrap: nowrap;
+    flex-direction: row;
+    overflow: hidden;
+    /* overflow-x: auto; */
+	flex-wrap: wrap;
+    justify-content: center;
 
 }
 .MainPage{
@@ -12,6 +13,7 @@
     border: 2px solid black;
     border-radius: 20px;
     margin: 10px;
+    font-size: 12px;
 }
 
 .MainPage img{
