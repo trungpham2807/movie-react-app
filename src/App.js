@@ -105,7 +105,7 @@ useEffect(() => {
       <Switch>
         {/* <Route path="/" component={MainPage} /> */}
         <Route path ="/search/:id" component = {SearchMovie} />
-        <Route exact path="/detail-movie/:id" component = {DetailMovie} />
+        <Route exact path="/movie/:id" component = {DetailMovie} />
         <Route exact path="/now-playing" component = {MainPage} />
         <Route exact path="/top-rated" component = {PopularMovie} />
       </Switch>

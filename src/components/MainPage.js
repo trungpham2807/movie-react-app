@@ -40,7 +40,6 @@ const MainPage = ({data, genre, arrayGenresName, currentPage, totalPage, setCurr
 
 
 
-
     const handleAsc = () => {
         const sort_vote_average = [];
 
@@ -63,7 +62,7 @@ const MainPage = ({data, genre, arrayGenresName, currentPage, totalPage, setCurr
                  <button>{e.name}</button>
                ))}
            </div>
-           <div>
+           <div class="sort-vote">
                <button onClick = {handleAsc}>Sort Asc</button>
                <button>Sort Desc</button>
            </div>
