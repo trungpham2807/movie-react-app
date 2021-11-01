@@ -5,8 +5,8 @@ import { Button, Image, Card } from "react-bootstrap";
 import Streaming from "./Streaming";
 import NavBarMovie from "./NavBarMovie";
 import { useParams } from "react-router-dom";
-
-const IMG_API = "https://image.tmdb.org/t/p/w200" 
+import './detailMovie.css'
+const IMG_API = "https://image.tmdb.org/t/p/w200"
 
 const API_KEY = process.env.API_KEY;
 
@@ -16,7 +16,7 @@ const DetailMovie = () => {
 
     useEffect(() => {
         const fetchMovieDetail = async () => {
-          const url = `https://api.themoviedb.org/3/movie/${id}?api_key=3c7844e5f1c003adb7e62ecf0d6885b7`
+            const url = `https://api.themoviedb.org/3/movie/${id}?api_key=3c7844e5f1c003adb7e62ecf0d6885b7`
 
             const res = await fetch(url);
             const json = await res.json();
@@ -28,34 +28,53 @@ const DetailMovie = () => {
         };
         fetchMovieDetail();
     }, [id]);
-console.log("movie detail", movieDetail);
+    console.log("movie detail", movieDetail);
     return (
-        <>
-        <div className="DetailMovie" >
-                return (
-        <div>
+        <div className="App">
+            <div className="container">
+                <div className="row">
+                    <div className="col-6">
+                        <img src={"https://image.tmdb.org/t/p/w500/" + movieDetail.poster_path} />
+                    </div>
+                    <div className="col-6">
+                        <div className="col-6 right">
+                            <h4>{movieDetail.title}</h4>
+                            <p>
+                                Genres:{" "}
+                                {movieDetail.genres?.map((g) => {
+                                    return (
+                                        <Button variant={"success"} className="ml-2 button__btn" key={g.key}
+                                            style={{ margin: '10px 5px' }}
 
-        <h1>Popular Movie</h1>
-        <div className ="TopRated-container">
-            
-                <div className ="TopRated">
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={IMG_API + movieDetail.poster_path} alt={movieDetail.title} />
-                <Card.Body className = "TopRatedInfo">
-                    <Card.Title>{movieDetail.title}</Card.Title>
-                    <Card.Text>{movieDetail.genre_ids}</Card.Text>
-                    <Card.Text>{movieDetail.vote_average} {movieDetail.vote_count}</Card.Text>
-                    <Card.Text>{movieDetail.release_date}</Card.Text>
-                    <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-                </Card>
+                                        >
+                                            {g.name}
+                                        </Button>
+                                    );
+                                })}
+                            </p>
+                            <p>
+                                {movieDetail.production_companies?.map((p) => {
+                                    return (
+                                        <Image
+                                            key={p.id}
+                                            className="mx-3"
+                                            style={{ width: "90px", height: "auto" }}
+                                            src={`https://image.tmdb.org/t/p/w500/${p.logo_path || "p3ZZzdpYlf6PEz5HR9t5SJQT5dO.png"}`}
+                                        />
+                                    );
+                                })}
+                            </p>
+                            <strong>
+                                <p>{movieDetail.overview}</p>
+                            </strong>
+                            <p>Runtime: {movieDetail.runtime} minutes</p>
+                            <Button href={movieDetail.homepage}>To Movie Page</Button>
+                            <hr className="solid"></hr>
+                        </div>
+                    </div>
+                </div>
             </div>
-        )
-        
         </div>
-        </div>
-        </div>
-        </>
     );
 };
 
