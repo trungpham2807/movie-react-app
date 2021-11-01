@@ -99,8 +99,9 @@ useEffect(() => {
   return (
     <div className="App">
       <SearchMovie query={query} setQuery = {setQuery} searchMovie = {searchMovie} setSearchMovie = {setSearchMovie}/>
-      <NavBarMovie />
+      {/* <NavBarMovie /> */}
       <SliderMovie />
+
       <Switch>
         {/* <Route path="/" component={MainPage} /> */}
         <Route path ="/search/:id" component = {SearchMovie} />

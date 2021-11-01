@@ -11,7 +11,7 @@ import {
 
   import PaginationMovie from "./PaginationMovie"
   import DetailMovie from "./DetailMovie"
-
+import SliderMovie from "./SliderMovie"
 const IMG_API = "https://image.tmdb.org/t/p/w200" 
 
 
@@ -94,6 +94,7 @@ const MainPage = ({data, genre, arrayGenresName, currentPage, totalPage, setCurr
                             } */}
                         </button>
                         <h5>Vote Count: {e.vote_count}</h5>
+                        {/* <Link to={"/DetailMovie"} className="btn btn-primary">Watch Now</Link> */}
 
                         <Link to={`/movie/${e.id}`} className="btn btn-primary">Watch Now</Link>
                         {/* <button onClick = {RouteChange}>Watch</button> */}

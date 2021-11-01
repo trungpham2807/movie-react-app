@@ -19,11 +19,10 @@ const NavBarMovie = () => {
     const HandleChange = (e) => {
         setQuery(e.target.value);
     }
-    const History = useHistory();
+    const history = useHistory();
     const HandleSubmit = (e) => {
         e.preventDefault();
-        console.log("hihi")
-        History.push(`/search/${query}`);
+        history.push(`/search/${query}`);
     }
 
 
