@@ -57,7 +57,7 @@ const DetailMovie = () => {
                                 <p>{movieDetail.overview}</p>
                             </strong>
                             <p>Runtime: {movieDetail.runtime} minutes</p>
-                            <Button href={movieDetail.homepage}>To Movie Page</Button>
+                            <Button href={movieDetail.homepage}>Home Page</Button>
                             <hr className="solid"></hr>
                         </div>
                     </div>

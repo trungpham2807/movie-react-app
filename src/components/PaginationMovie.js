@@ -1,6 +1,6 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
-
+import "../App.css"
 const PaginationMovie = ({ currentPage, setCurrentPage, totalPage }) => {
   const handleClick = (num) => {
     setCurrentPage(parseInt(num));

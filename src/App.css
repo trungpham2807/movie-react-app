@@ -70,3 +70,10 @@ body{
 .each-card{
   margin: 10px;
 }
+
+.pagination{
+  display: flex;
+    padding-left: 0;
+    list-style: none;
+    justify-content: center;
+}
