@@ -26,7 +26,7 @@ const SearchMovie = ({ currentPage}) => {
 
     return (
         <div>
-            <NavBarMovie />
+            {/* <NavBarMovie /> */}
             <div className="search-container">
                 {searchData && searchData.map((e) => {
                     return (

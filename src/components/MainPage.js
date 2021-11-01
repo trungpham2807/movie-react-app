@@ -54,7 +54,9 @@ const MainPage = ({data, genre, arrayGenresName, currentPage, totalPage, setCurr
 
     
     return (
+
         <div>
+        <SliderMovie />
 
             <div>
                {genre.map((e)=> (

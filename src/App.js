@@ -101,7 +101,6 @@ useEffect(() => {
       <NavBarMovie />
       {/* <SearchMovie query={query} setQuery = {setQuery} searchMovie = {searchMovie} setSearchMovie = {setSearchMovie}/> */}
       {/* <NavBarMovie /> */}
-      <SliderMovie />
 
       <Switch>
         {/* <Route path="/" component={MainPage} /> */}
