@@ -16,7 +16,7 @@ const IMG_API = "https://image.tmdb.org/t/p/w500"
 
 
 
-const MainPage = () => {
+const TopRate = () => {
     const [data, setData] = useState()
     // console.log(data)
     // const handleAsc = () => {
@@ -31,7 +31,7 @@ const MainPage = () => {
     // }
     useEffect(() => {
         const getData = async () => {
-            const req = await fetch('https://api.themoviedb.org/3/trending/all/day?api_key=3c7844e5f1c003adb7e62ecf0d6885b7')
+            const req = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=3c7844e5f1c003adb7e62ecf0d6885b7&language=en-US&page=1')
             const res = await req.json()
             setData(res)
         }
@@ -49,7 +49,7 @@ const MainPage = () => {
                 <button>Sort Asc</button>
                 <button>Sort Desc</button>
             </div>
-            <h1>Trending</h1>
+            <h1>Top rate</h1>
 
             <div className="MainPage-container">
 
@@ -82,4 +82,4 @@ const MainPage = () => {
     )
 }
 
-export default MainPage;
+export default TopRate;
